@@ -59,7 +59,7 @@ records = query
 ql = input('Введите имя или идентификатор издателя: ')
 if ql.isdigit():
     for publisher, book, stock, sale, shop in records.filter(Publisher.id == ql):
-        print(book.title, shop.name, sale.price, sale.date_sale)
+        print(book.title, '|', shop.name, '|', sale.price, '|', sale.date_sale)
 else:
     for publisher, book, stock, sale, shop in records.filter(Publisher.name == ql):
-        print(book.title, shop.name, sale.price, sale.date_sale)
+        print(book.title, '|', shop.name, '|', sale.price, '|', sale.date_sale)
